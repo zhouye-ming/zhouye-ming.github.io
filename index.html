@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>昼夜冥 | 个人主页</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Overlay for panel backdrop -->
+  <div class="panel-overlay" id="panelOverlay"></div>
+
+  <!-- ===== Navigation ===== -->
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-menu" id="navMenu">
+    <div class="nav-header">✦ 导航</div>
+
+    <div class="nav-item" onclick="navigate('/about')">
+      <span class="icon">💫</span> 关于
+    </div>
+    <div class="nav-item" onclick="navigate('/skills')">
+      <span class="icon">⚡</span> 技能
+    </div>
+    <div class="nav-item" onclick="navigate('/projects')">
+      <span class="icon">📦</span> 作品
+    </div>
+    <div class="nav-item" onclick="navigate('/contact')">
+      <span class="icon">✉️</span> 联系
+    </div>
+    <div class="nav-item bili" onclick="window.open('https://space.bilibili.com/345800938', '_blank')">
+      <span class="icon">📺</span> Bilibili
+    </div>
+
+    <div class="nav-footer">昼夜冥 · 2026</div>
+  </nav>
+
+  <!-- ===== Main Hub ===== -->
+  <div class="main-content" id="mainContent">
+    <div class="hero" id="hero">
+      <div class="avatar-ring" id="avatarRing">
+        <div class="avatar-inner" id="avatarInner">
+          <span id="avatarFallback">🌙</span>
+          <span class="avatar-hint">双击更换</span>
+        </div>
+      </div>
+      <input type="file" id="avatarInput" accept="image/*" style="display:none">
+      <h1>昼夜冥</h1>
+      <p class="subtitle">Bilibili UP主 · 开发者 · 创作者</p>
+      <p class="tagline">✦ 在代码与光影之间徘徊 ✦</p>
+      <div class="typewriter">
+        <span id="type-text"></span><span class="cursor"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Panel: About ===== -->
+  <div class="panel panel-about" id="panel-about">
+    <button class="close-btn" onclick="navigate('/zhouyeming')">✕</button>
+    <h2>💫 关于</h2>
+    <div class="panel-sub">ABOUT</div>
+    <p>
+      这里是昼夜冥，一个在 Bilibili 分享技术与创作的 UP 主。<br><br>
+      热爱前端开发、动画设计，以及一切充满创造力的事物。
+      相信代码可以很美，设计可以很有趣。<br><br>
+      在数字世界里搭建属于自己的小小宇宙。
+    </p>
+  </div>
+
+  <!-- ===== Panel: Skills ===== -->
+  <div class="panel panel-skills" id="panel-skills">
+    <button class="close-btn" onclick="navigate('/zhouyeming')">✕</button>
+    <h2>⚡ 技能</h2>
+    <div class="panel-sub">SKILLS</div>
+    <div class="skills-grid">
+      <span class="skill-tag">HTML / CSS</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Vue</span>
+      <span class="skill-tag">TypeScript</span>
+      <span class="skill-tag">Node.js</span>
+      <span class="skill-tag">Motion Design</span>
+      <span class="skill-tag">Figma</span>
+      <span class="skill-tag">After Effects</span>
+      <span class="skill-tag">Premiere</span>
+    </div>
+  </div>
+
+  <!-- ===== Panel: Projects ===== -->
+  <div class="panel panel-projects" id="panel-projects">
+    <button class="close-btn" onclick="navigate('/zhouyeming')">✕</button>
+    <h2>📦 作品</h2>
+    <div class="panel-sub">PROJECTS</div>
+    <div class="project-item">
+      <h3>Project A</h3>
+      <p>一个关于技术与创意的小尝试。</p>
+    </div>
+    <div class="project-item">
+      <h3>Project B</h3>
+      <p>另一个值得被记住的作品。</p>
+    </div>
+    <div class="project-item">
+      <h3>Project C</h3>
+      <p>还在构思中的下一个项目。</p>
+    </div>
+  </div>
+
+  <!-- ===== Panel: Contact ===== -->
+  <div class="panel panel-contact" id="panel-contact">
+    <button class="close-btn" onclick="navigate('/zhouyeming')">✕</button>
+    <h2>✉️ 联系</h2>
+    <div class="panel-sub">CONTACT</div>
+    <div class="contact-links">
+      <a href="https://space.bilibili.com/345800938" target="_blank" class="bili-link">
+        <span class="link-icon">📺</span> Bilibili · @昼夜冥
+      </a>
+      <a href="#">
+        <span class="link-icon">🐙</span> GitHub
+      </a>
+      <a href="#">
+        <span class="link-icon">🐦</span> Twitter
+      </a>
+      <a href="#">
+        <span class="link-icon">✉️</span> Email
+      </a>
+    </div>
+  </div>
+
+  <script src="js/background.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/avatar.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
